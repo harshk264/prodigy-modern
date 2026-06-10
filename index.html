@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Prodigy Investment Management is a niche service provider in the investment management space, whose approach is unconventional and unique.">
+<title>Prodigy Investment Management</title>
+<link rel="icon" href="https://www.prodigyinvest.com/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#043c77;
+  --navy-deep:#032b57;
+  --navy-ink:#0b2540;
+  --gold:#f8c301;
+  --gold-soft:#f9cd29;
+  --paper:#ffffff;
+  --mist:#f5f8fc;
+  --line:rgba(4,60,119,.10);
+  --shadow-sm:0 2px 10px rgba(4,38,77,.07);
+  --shadow-md:0 14px 40px rgba(4,38,77,.12);
+  --shadow-lg:0 30px 80px rgba(3,30,62,.25);
+  --radius:20px;
+  --font-body:'Inter',system-ui,-apple-system,sans-serif;
+  --font-display:'Fraunces',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--navy-ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--navy);text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:10px 18px;z-index:200;border-radius:0 0 10px 0}
+.skip-link:focus{left:0}
+
+/* ---------- Header ---------- */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.site-header.scrolled{border-bottom-color:var(--line);box-shadow:var(--shadow-sm)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand-logo img{width:170px;height:auto}
+.header-actions{display:flex;align-items:center;gap:12px}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1.5px solid var(--navy);border-radius:999px;color:var(--navy);font-size:.78rem;font-weight:600;letter-spacing:.08em;background:transparent;transition:background .25s,color .25s,transform .25s}
+.btn-ghost:hover{background:var(--navy);color:#fff;transform:translateY(-1px)}
+.btn-solid{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border:none;border-radius:999px;background:var(--navy);color:#fff;font-size:.78rem;font-weight:600;letter-spacing:.08em;transition:background .25s,transform .25s,box-shadow .25s}
+.btn-solid:hover{background:var(--navy-deep);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;height:min(92vh,820px);min-height:560px;overflow:hidden;background:var(--navy-deep)}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;pointer-events:none}
+.hero-slide.active{opacity:1;pointer-events:auto}
+.hero-slide img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1);animation:none}
+.hero-slide.active img.bg{animation:kenburns 9s ease-out forwards}
+@keyframes kenburns{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(75deg,rgba(3,32,64,.82) 0%,rgba(3,32,64,.45) 45%,rgba(3,32,64,.12) 100%)}
+.hero-content{position:absolute;z-index:3;left:0;right:0;bottom:14%;}
+.hero-tagline{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:clamp(2.4rem,5.4vw,4.4rem);color:#fff;line-height:1.12;max-width:14ch;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.hero-kicker{margin-top:22px;color:var(--gold);font-size:.84rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase}
+.hero-cta{margin-top:18px;display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border:1.5px solid rgba(255,255,255,.85);border-radius:999px;background:rgba(255,255,255,.06);backdrop-filter:blur(6px);color:#fff;font-size:.8rem;font-weight:600;letter-spacing:.14em;transition:background .3s,border-color .3s,transform .3s}
+.hero-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-ink);transform:translateY(-2px)}
+.hero-cta .arr{transition:transform .3s}
+.hero-cta:hover .arr{transform:translateX(4px)}
+.hero-nav{position:absolute;z-index:4;right:36px;bottom:36px;display:flex;gap:10px}
+.hero-nav button{width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:rgba(255,255,255,.08);color:#fff;font-size:1.05rem;display:grid;place-items:center;transition:background .25s,border-color .25s}
+.hero-nav button:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-ink)}
+.hero-dots{position:absolute;z-index:4;left:50%;transform:translateX(-50%);bottom:30px;display:flex;gap:10px}
+.hero-dots button{width:34px;height:4px;border-radius:4px;border:none;background:rgba(255,255,255,.35);transition:background .3s}
+.hero-dots button.active{background:var(--gold)}
+
+/* ---------- Sections ---------- */
+.section{padding:96px 0}
+.section-title{font-family:var(--font-display);font-weight:500;font-size:clamp(1.9rem,3.4vw,2.8rem);color:var(--navy);letter-spacing:.01em}
+.eyebrow{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--navy);opacity:.55;margin-bottom:12px}
+
+/* ---------- Testimonials + resources ---------- */
+.testi-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:64px;align-items:start}
+.testi-stage{position:relative;margin-top:34px;min-height:300px}
+.testi-item{position:absolute;inset:0;opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;pointer-events:none}
+.testi-item.active{opacity:1;transform:none;pointer-events:auto;position:relative}
+.testi-quote-mark{font-family:var(--font-display);font-size:5rem;line-height:.6;color:var(--gold);height:38px}
+.testi-text{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:clamp(1.15rem,1.7vw,1.45rem);color:var(--navy);line-height:1.55}
+.testi-who{margin-top:26px;font-size:.92rem;font-weight:600;color:var(--navy);opacity:.78}
+.testi-foot{display:flex;align-items:center;justify-content:space-between;margin-top:36px;gap:20px;flex-wrap:wrap}
+.testi-dots{display:flex;gap:8px}
+.testi-dots button{width:10px;height:10px;border-radius:50%;border:none;background:rgba(4,60,119,.18);transition:background .3s,transform .3s}
+.testi-dots button.active{background:var(--gold);transform:scale(1.25)}
+.resource-list{display:flex;flex-direction:column;gap:20px}
+.resource-card{display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s;text-align:left;width:100%}
+.resource-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.resource-card img{width:120px;height:78px;object-fit:cover;border-radius:12px;flex:none}
+.resource-card .r-label{font-weight:600;color:var(--navy);font-size:.98rem;line-height:1.35}
+.resource-card .r-sub{font-size:.78rem;letter-spacing:.06em;color:var(--navy);opacity:.55;margin-top:3px}
+
+/* ---------- Gold train band ---------- */
+.train-band{position:relative;background:linear-gradient(180deg,var(--gold-soft),var(--gold));height:200px;overflow:hidden}
+.train-band svg{position:absolute;bottom:24px;left:0;height:96px;width:auto;will-change:transform}
+.train-track{position:absolute;bottom:22px;left:0;right:0;height:3px;background:rgba(4,60,119,.35)}
+
+/* ---------- Why Prodigy ---------- */
+.why{background:var(--mist)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:48px}
+.why-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:36px 34px;text-align:left;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s;position:relative}
+.why-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.why-card h3{font-family:var(--font-display);font-weight:550;font-size:1.45rem;color:var(--navy);margin-bottom:12px}
+.why-card p{font-size:1rem;color:var(--navy-ink);opacity:.85}
+.why-card .go{position:absolute;top:30px;right:28px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(248,195,1,.18);color:var(--navy);font-size:1rem;transition:background .3s,transform .3s}
+.why-card:hover .go{background:var(--gold);transform:translateX(3px)}
+
+/* ---------- Why not band ---------- */
+.whynot-band{background:linear-gradient(100deg,var(--navy-deep),var(--navy));padding:64px 0}
+.whynot-btn{display:flex;align-items:center;justify-content:center;gap:14px;width:100%;background:transparent;border:none;color:#fff;font-family:var(--font-display);font-weight:450;font-size:clamp(1.25rem,2.6vw,1.9rem);letter-spacing:.04em;transition:color .3s}
+.whynot-btn .arr{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);font-size:1.1rem;transition:background .3s,border-color .3s,transform .3s;flex:none}
+.whynot-btn:hover{color:var(--gold)}
+.whynot-btn:hover .arr{background:var(--gold);border-color:var(--gold);color:var(--navy-ink);transform:translateX(5px)}
+
+/* ---------- Explore trio ---------- */
+.trio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:8px}
+.trio-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:42px 28px;display:flex;flex-direction:column;align-items:center;gap:18px;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
+.trio-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.trio-card .ic{width:92px;height:92px;border-radius:50%;background:var(--mist);display:grid;place-items:center;overflow:hidden}
+.trio-card .ic img{width:58px;height:58px;object-fit:contain}
+.trio-card h3{font-family:var(--font-display);font-weight:550;font-size:1.3rem;color:var(--navy)}
+
+/* ---------- Careers band ---------- */
+.careers-band{background:linear-gradient(180deg,var(--gold),var(--gold-soft));padding:84px 0 0;text-align:center}
+.careers-band h2{font-family:var(--font-display);font-weight:550;font-size:clamp(1.5rem,3vw,2.3rem);color:var(--navy-ink);letter-spacing:.02em}
+.careers-band .explore{margin-top:26px;display:inline-flex;align-items:center;gap:10px;padding:14px 34px;border-radius:999px;background:var(--navy);color:#fff;border:none;font-size:.82rem;font-weight:700;letter-spacing:.18em;transition:background .3s,transform .3s,box-shadow .3s}
+.careers-band .explore:hover{background:var(--navy-deep);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.referral-note{margin-top:64px;background:rgba(255,255,255,.55);padding:26px 24px;backdrop-filter:blur(4px)}
+.referral-note p{font-family:var(--font-display);font-size:1.25rem;color:var(--navy);font-weight:500}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--navy-deep);color:rgba(255,255,255,.85);padding:72px 0 28px;font-size:.92rem}
+.footer-grid{display:grid;grid-template-columns:1fr 1.2fr 1.4fr;gap:44px;align-items:start}
+.footer-logo img{width:170px}
+.site-footer p{margin-bottom:10px;line-height:1.7}
+.footer-links{list-style:none;margin-top:8px}
+.footer-links li{margin-bottom:10px}
+.site-footer a{color:#fff;border-bottom:1px solid rgba(248,195,1,.0);transition:color .25s,border-color .25s}
+.site-footer a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.site-footer button.linklike{background:none;border:none;color:#fff;font:inherit;padding:0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.site-footer button.linklike:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.footer-sep{border:none;border-top:1px solid rgba(255,255,255,.14);margin:44px 0 24px}
+.footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.84rem;color:rgba(255,255,255,.6)}
+
+/* ---------- Modals ---------- */
+dialog.modal{border:none;border-radius:24px;max-width:860px;width:calc(100% - 36px);max-height:86vh;padding:0;box-shadow:var(--shadow-lg);overscroll-behavior:contain}
+dialog.modal::backdrop{background:rgba(3,28,56,.55);backdrop-filter:blur(6px)}
+dialog.modal[open]{animation:pop .35s cubic-bezier(.2,.9,.3,1.1)}
+@keyframes pop{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+.modal-head{position:sticky;top:0;display:flex;align-items:center;gap:16px;padding:20px 28px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:2}
+.modal-head img{width:40px;height:auto}
+.modal-head h2{font-family:var(--font-display);font-weight:550;font-size:1.45rem;color:var(--navy);flex:1;line-height:1.25}
+.modal-close{width:40px;height:40px;flex:none;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--navy);font-size:1.15rem;display:grid;place-items:center;transition:background .25s,color .25s,transform .25s}
+.modal-close:hover{background:var(--navy);color:#fff;transform:rotate(90deg)}
+.modal-body{padding:28px 32px 40px}
+.modal-body p{margin-bottom:18px;font-size:1rem;color:var(--navy-ink);line-height:1.75}
+.modal-body h3{font-family:var(--font-display);font-weight:550;font-size:1.25rem;color:var(--navy);margin:30px 0 14px}
+.modal-body a{font-weight:600;border-bottom:1.5px solid var(--gold)}
+.modal-body ul{margin:0 0 18px 22px}
+.modal-body ul li{margin-bottom:8px}
+blockquote.t{border-left:3px solid var(--gold);padding:4px 0 4px 20px;margin-bottom:24px}
+blockquote.t em{font-family:var(--font-display);font-style:italic;color:var(--navy);font-size:1.02rem;line-height:1.7}
+blockquote.t footer{margin-top:10px;font-size:.88rem;font-weight:700;color:var(--navy);opacity:.8}
+
+/* perf table */
+.perf-wrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:8px 0 14px;box-shadow:var(--shadow-sm)}
+.perf-cap{background:var(--navy);color:#fff;text-align:center;font-weight:600;letter-spacing:.04em;padding:13px 16px;font-size:.95rem}
+table.perf{width:100%;border-collapse:collapse;font-size:.95rem}
+table.perf th{background:var(--mist);color:var(--navy);font-weight:700;padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
+table.perf td{padding:12px 16px;border-bottom:1px solid var(--line)}
+table.perf tr:last-child td{border-bottom:none;background:rgba(248,195,1,.10);font-weight:600}
+table.perf td:nth-child(2){color:var(--navy);font-weight:700}
+.note{font-size:.8rem;color:var(--navy-ink);opacity:.65;line-height:1.6;margin-bottom:22px}
+.sub{display:block;font-size:.74rem;font-weight:400;opacity:.7}
+
+/* FAQ */
+details.faq-item{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:#fff;overflow:hidden}
+details.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:17px 20px;font-weight:600;color:var(--navy);font-size:.98rem}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary .chev{flex:none;width:28px;height:28px;border-radius:50%;background:var(--mist);display:grid;place-items:center;transition:transform .3s;font-size:.8rem}
+details.faq-item[open] summary .chev{transform:rotate(180deg);background:var(--gold)}
+details.faq-item .faq-a{padding:0 20px 18px;color:var(--navy-ink)}
+details.faq-item .faq-a ul{margin-left:20px}
+
+/* forms */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-grid .full{grid-column:1 / -1}
+.field label{display:block;font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--navy);margin-bottom:6px}
+.field input[type=text],.field input[type=email],.field textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:.95rem;background:var(--mist);transition:border-color .25s,background .25s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--navy);background:#fff}
+.field textarea{min-height:110px;resize:vertical}
+.field input[type=file]{width:100%;font-size:.85rem;padding:10px;border:1.5px dashed var(--line);border-radius:12px;background:var(--mist)}
+.btn-submit{padding:13px 34px;border:none;border-radius:999px;background:var(--navy);color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.14em;transition:background .25s,transform .25s}
+.btn-submit:hover{background:var(--navy-deep);transform:translateY(-1px)}
+.complaint-links{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.92rem}
+
+/* careers accordions */
+.job-acc{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff}
+.job-acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:17px 20px;font-family:var(--font-display);font-weight:600;font-size:1.1rem;color:var(--navy)}
+.job-acc summary::-webkit-details-marker{display:none}
+.job-acc summary .chev{flex:none;width:28px;height:28px;border-radius:50%;background:var(--mist);display:grid;place-items:center;transition:transform .3s;font-size:.8rem}
+.job-acc[open] summary .chev{transform:rotate(180deg);background:var(--gold)}
+.job-body{padding:4px 20px 22px}
+.expect-list{list-style:none;margin:0 0 6px}
+.expect-list li{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.expect-list .tick{flex:none;width:24px;height:24px;border-radius:50%;background:var(--gold);color:var(--navy-ink);display:grid;place-items:center;font-size:.75rem;font-weight:800;margin-top:2px}
+
+/* newsletters */
+.nl-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.nl-grid a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 18px;border:1.5px solid var(--line);border-radius:12px;font-weight:600;color:var(--navy);border-bottom:1.5px solid var(--line);transition:border-color .25s,background .25s,transform .25s}
+.nl-grid a:hover{border-color:var(--gold);background:rgba(248,195,1,.08);transform:translateY(-2px)}
+.nl-grid a .pdf{font-size:.68rem;font-weight:800;letter-spacing:.08em;background:var(--mist);border-radius:6px;padding:3px 8px;color:var(--navy);opacity:.75}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* responsive */
+@media (max-width:920px){
+  .testi-grid{grid-template-columns:1fr;gap:48px}
+  .why-grid{grid-template-columns:1fr}
+  .trio-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .nl-grid{grid-template-columns:1fr}
+  .header-inner{height:68px}
+  .brand-logo img{width:138px}
+  .btn-ghost,.btn-solid{padding:9px 14px;font-size:.7rem}
+  .hero-nav{display:none}
+  .modal-body{padding:22px 20px 32px}
+}
+</style>
+</head>
+<body>
+<a href="#maincontent" class="skip-link">Skip to content</a>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand-logo" aria-label="Prodigy Investment Management — Home">
+      <img src="img/Prodigy-Investment-logo.svg" alt="Prodigy Investment Management">
+    </a>
+    <nav class="header-actions" aria-label="Primary">
+      <button type="button" class="btn-ghost" data-modal="modal-newsletters">MONTHLY NEWSLETTER</button>
+      <a href="https://prodigy.bfsiapp.com/" target="_blank" rel="noopener" class="btn-solid">CLIENT LOGIN</a>
+    </nav>
+  </div>
+</header>
+
+<main id="maincontent">
+  <h1 class="visually-hidden">Prodigy Investment Management</h1>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" role="region" aria-label="Homepage Carousel">
+    <div class="hero-slide active">
+      <img class="bg" src="img/cyc1.webp" alt="">
+      <div class="hero-content container">
+        <p class="hero-tagline">Invest well. Celebrate&nbsp;life.</p>
+        <p class="hero-kicker">How We Manage Risk</p>
+        <button type="button" class="hero-cta" data-modal="modal-risk" aria-haspopup="dialog">RISK MANAGEMENT STRATEGY <span class="arr">&rarr;</span></button>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <img class="bg" src="img/ship.webp" alt="">
+      <div class="hero-content container">
+        <p class="hero-tagline">Invest well. Celebrate&nbsp;life.</p>
+        <p class="hero-kicker">What We Do</p>
+        <button type="button" class="hero-cta" data-modal="modal-about" aria-haspopup="dialog">ABOUT PRODIGY <span class="arr">&rarr;</span></button>
+      </div>
+    </div>
+    <div class="hero-nav">
+      <button type="button" id="heroPrev" aria-label="Previous slide">&larr;</button>
+      <button type="button" id="heroNext" aria-label="Next slide">&rarr;</button>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+  </section>
+
+  <!-- ================= TESTIMONIALS + RESOURCES ================= -->
+  <section class="section">
+    <div class="container testi-grid">
+      <div class="reveal">
+        <span class="eyebrow">What our clients say</span>
+        <h2 class="section-title">Testimonials</h2>
+        <div class="testi-stage" id="testiStage">
+          <figure class="testi-item active">
+            <div class="testi-quote-mark">&ldquo;</div>
+            <blockquote class="testi-text">Prodigy's hallmark has been an uncompromising focus on managing risk, in a disciplined, ethical and transparent manner. My experience with them has been very fruitful and I have added substantially to my portfolio with them since the initial funding.</blockquote>
+            <figcaption class="testi-who">Retired Global Wealth Manager, USA, Client Since 2014</figcaption>
+          </figure>
+          <figure class="testi-item">
+            <div class="testi-quote-mark">&ldquo;</div>
+            <blockquote class="testi-text">Prodigy has been largely responsible for my financial prosperity, helping me to concentrate on enjoying my early retirement, free of financial stress. The professionalism, enthusiasm and spontaneity of Prodigy must be lauded. I feel they have delivered the highest level of integrity and promptness in customer service.</blockquote>
+            <figcaption class="testi-who">Retired Co-Founder, Leading Accounting Firm, Mumbai, Client Since 2005</figcaption>
+          </figure>
+          <figure class="testi-item">
+            <div class="testi-quote-mark">&ldquo;</div>
+            <blockquote class="testi-text">Having been with Prodigy for the last 10 years, I have seen that they have always believed in and stuck to their investment philosophy. This, I believe, is the real hallmark of a good fund manager.</blockquote>
+            <figcaption class="testi-who">Owner, Oil and Gas Services Ancillary, Mumbai, Client Since 2010</figcaption>
+          </figure>
+          <figure class="testi-item">
+            <div class="testi-quote-mark">&ldquo;</div>
+            <blockquote class="testi-text">Prodigy has led our investments with visibility, flexibility and utmost diligence. Having been invested with Prodigy right from the start, I have been able to celebrate life!</blockquote>
+            <figcaption class="testi-who">Real Estate Developer, Hyderabad, Client Since 2005</figcaption>
+          </figure>
+          <figure class="testi-item">
+            <div class="testi-quote-mark">&ldquo;</div>
+            <blockquote class="testi-text">I thank the team for handling my funds for the last decade, and they have done a good job. I very much appreciate the idea of distributing a small part of the surplus every quarter to be spent.</blockquote>
+            <figcaption class="testi-who">Practicing CA, Mumbai</figcaption>
+          </figure>
+        </div>
+        <div class="testi-foot">
+          <div class="testi-dots" id="testiDots" role="tablist" aria-label="Testimonial navigation"></div>
+          <button type="button" class="btn-ghost" data-modal="modal-testimonials">ALL TESTIMONIALS</button>
+        </div>
+      </div>
+
+      <div class="resource-list reveal">
+        <button type="button" class="resource-card" data-modal="modal-growth" aria-haspopup="dialog" aria-label="Open Growth Strategy dialog">
+          <img src="img/gs.webp" alt="Growth Strategy">
+          <span><span class="r-label">Prodigy Growth Strategy</span><span class="r-sub" style="display:block">READ MORE &rarr;</span></span>
+        </button>
+        <button type="button" class="resource-card" data-modal="modal-reverse" aria-haspopup="dialog" aria-label="Open Reverse Research White Paper dialog">
+          <img src="img/l2new.webp" alt="Reverse Research White Paper">
+          <span><span class="r-label">Reverse Research White Paper</span><span class="r-sub" style="display:block">READ MORE &rarr;</span></span>
+        </button>
+        <a class="resource-card" href="https://www.prodigyinvest.com/Prodigy-Client-Induction-Deck-8-April-2026.pdf" target="_blank" rel="noopener">
+          <img src="img/companyppt.png" alt="Company Presentation">
+          <span><span class="r-label">Company Presentation</span><span class="r-sub" style="display:block">OPEN PDF &rarr;</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GOLD TRAIN BAND ================= -->
+  <div class="train-band" aria-hidden="true">
+    <svg id="train" viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#043c77" stroke-width="4">
+      <!-- locomotive -->
+      <rect x="20" y="34" width="120" height="56" rx="10"/>
+      <rect x="140" y="52" width="44" height="38" rx="6"/>
+      <rect x="40" y="14" width="22" height="22" rx="4"/>
+      <circle cx="52" cy="96" r="12"/><circle cx="108" cy="96" r="12"/><circle cx="162" cy="96" r="10"/>
+      <!-- carriage 1 -->
+      <rect x="216" y="44" width="140" height="46" rx="10"/>
+      <line x1="240" y1="58" x2="240" y2="76"/><line x1="286" y1="58" x2="286" y2="76"/><line x1="332" y1="58" x2="332" y2="76"/>
+      <circle cx="248" cy="96" r="10"/><circle cx="324" cy="96" r="10"/>
+      <!-- carriage 2 -->
+      <rect x="388" y="44" width="140" height="46" rx="10"/>
+      <line x1="412" y1="58" x2="412" y2="76"/><line x1="458" y1="58" x2="458" y2="76"/><line x1="504" y1="58" x2="504" y2="76"/>
+      <circle cx="420" cy="96" r="10"/><circle cx="496" cy="96" r="10"/>
+      <!-- couplers -->
+      <line x1="184" y1="80" x2="216" y2="80"/><line x1="356" y1="80" x2="388" y2="80"/>
+    </svg>
+    <div class="train-track"></div>
+  </div>
+
+  <!-- ================= WHY PRODIGY ================= -->
+  <section class="section why">
+    <div class="container">
+      <div class="reveal" style="text-align:center">
+        <span class="eyebrow">Our edge</span>
+        <h2 class="section-title">WHY PRODIGY</h2>
+      </div>
+      <div class="why-grid">
+        <button type="button" class="why-card reveal" data-modal="modal-track" aria-label="Strong Track Record">
+          <span class="go">&rarr;</span>
+          <h3>Strong Track Record</h3>
+          <p>Since inception, we have produced a 22.5% CAGR vs a 12.3% CAGR for the Nifty50 Total Return Index as of 31<sup>st</sup> May 2026.</p>
+        </button>
+        <button type="button" class="why-card reveal" data-modal="modal-longevity" aria-label="Longevity and Trust">
+          <span class="go">&rarr;</span>
+          <h3>Longevity &amp; Trust</h3>
+          <p>Over 60% of the AUM belongs to families that have been with us for over 10 years.</p>
+        </button>
+        <button type="button" class="why-card reveal" data-modal="modal-payout" aria-label="Payout">
+          <span class="go">&rarr;</span>
+          <h3>Payout</h3>
+          <p>We encourage clients to opt for a payout of profits (we have a policy to pay out approximately 25% of realised profits every quarter).</p>
+        </button>
+        <button type="button" class="why-card reveal" data-modal="modal-human" aria-label="Right Human Attribute">
+          <span class="go">&rarr;</span>
+          <h3>Right Human Attribute</h3>
+          <p>Just as we seek out businesses built on values with ethical promoters, we hold ourselves to the same standards.</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY NOT BAND ================= -->
+  <section class="whynot-band">
+    <div class="container reveal">
+      <button type="button" class="whynot-btn" data-modal="modal-whynot" aria-label="Why Prodigy may not be right for you">
+        WHY PRODIGY MAY NOT BE RIGHT FOR YOU <span class="arr">&rarr;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= TEAM / ADMIN / FAQ ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="trio-grid">
+        <button type="button" class="trio-card reveal" data-modal="modal-team" aria-label="Team section">
+          <span class="ic"><img src="img/teamlogo.jpg" alt=""></span>
+          <h3>Team</h3>
+        </button>
+        <button type="button" class="trio-card reveal" data-modal="modal-admin" aria-label="Easy Administration section">
+          <span class="ic"><img src="img/easyadminlogo.webp" alt=""></span>
+          <h3>Easy Administration</h3>
+        </button>
+        <button type="button" class="trio-card reveal" data-modal="modal-faq" aria-label="FAQs section">
+          <span class="ic"><img src="img/faqslogo.jpg" alt=""></span>
+          <h3>Faq's</h3>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAREERS ================= -->
+  <section class="careers-band">
+    <div class="container reveal">
+      <h2>CAREERS AT PRODIGY INVESTMENT MANAGEMENT</h2>
+      <button type="button" class="explore" data-modal="modal-jobs" aria-label="Explore careers">EXPLORE</button>
+    </div>
+    <div class="referral-note">
+      <div class="container" style="text-align:center">
+        <p>We are accepting new clients only through existing client referrals.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo reveal">
+        <img src="img/footer-logo.webp" alt="Prodigy Investment Management">
+      </div>
+      <div class="reveal">
+        <p>MIV Investment Services Private Limited<br>301-302, Mittal Avenue, Nagindas<br>Master Road, Kala Ghoda, Fort,<br>Mumbai - 400001</p>
+        <p>CIN: U67190MH2005PTC154164</p>
+      </div>
+      <div class="reveal">
+        <p>The portfolio manager offers an option to clients to be on-boarded directly, without intermediation of persons engaged in distribution services.</p>
+        <ul class="footer-links">
+          <li><a href="https://www.prodigyinvest.com/calculator/Fee-Calculator.xlsx" target="_blank" rel="noopener">Fee Calculation Tool</a></li>
+          <li><a href="https://www.prodigyinvest.com/Disclosue-Document-3.pdf" target="_blank" rel="noopener">Disclosure Document</a> &nbsp;|&nbsp; <button type="button" class="linklike" data-modal="modal-disclaimer">Disclaimer</button></li>
+          <li><a href="https://www.prodigyinvest.com/Investor Charter_03 June 2025.pdf" target="_blank" rel="noopener">Investor Charter</a> &nbsp;|&nbsp; <button type="button" class="linklike" data-modal="modal-complaint">Complaints</button></li>
+        </ul>
+        <p style="margin-top:14px">SEBI PMS Registration No. INP 000001413</p>
+      </div>
+    </div>
+    <hr class="footer-sep">
+    <div class="footer-bottom">
+      <span>&copy; Copyright 2026 MIV Investment Services Private Limited</span>
+      <a href="https://www.10dumbs.com" target="_blank" rel="noopener" style="display:none">10 Dumbs Inc.</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================================================== -->
+<!-- ===================== MODALS ===================== -->
+<!-- ================================================== -->
+
+<!-- About Prodigy -->
+<dialog class="modal" id="modal-about" aria-label="About Prodigy">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>About Prodigy</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>Founded in 2005, Prodigy Investment Management is a niche service provider in the investment management space, whose approach is unconventional and unique. Using our Reverse Research approach, we look for unique businesses that are driven by their internal strengths, secular economic trends and structural changes.</p>
+    <p>Prodigy was founded by Mr. Ravi Chadha (MD &amp; CIO) and Mr. Sharad Nayak (CEO &amp; Director - Research), who are both extremely experienced with combined knowledge of 40+ years in capital markets.</p>
+    <p>As of date, Prodigy provides services over 200 families with numerous second-generation clients.</p>
+    <p>Prodigy Investment Management is the operational brand of MIV Investment Services Private Limited - SEBI licensed Portfolio Managers.</p>
+  </div>
+</dialog>
+
+<!-- Risk Management Strategy -->
+<dialog class="modal" id="modal-risk" aria-label="Risk Management Strategy">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Risk Management Strategy</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>We believe that successful investing is all about managing risk. Having survived multiple market crashes, we understand that risk management and capital protection are the primary considerations when it comes to making an investment decision. Our survival through the years is down to our strict risk management process.</p>
+    <p>Risk is mitigated though position sizing, in which we take into account overall market health, valuation changes, scrip performance and crucially, scrip liquidity. We operate with stop losses (price-wise and time-wise), which are amongst the parameters that have been set in place in order to trigger selling. Beyond stop losses at an individual scrip level, we also operate on the basis of a corpus stop loss. With the multiple exit triggers in place, rigorous capital protection is built into our process.</p>
+    <p>We believe if you manage risk well, the reward will follow!</p>
+  </div>
+</dialog>
+
+<!-- Prodigy Growth Strategy -->
+<dialog class="modal" id="modal-growth" aria-label="Prodigy Growth Strategy">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Prodigy Growth Strategy</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>Fine-tuned over the last 18 years, Prodigy Growth Strategy aims to deliver long term wealth creation by investing in stocks that we believe are under-researched and/or undervalued and appear to be primed to take advantage of emerging structural change or 'value migration'.</p>
+    <p>Prodigy Growth Strategy is sector as well as market cap agnostic. We constantly seek out businesses with sufficient liquidity and high quality leadership and management. At the core of our strategy, we look for early alignment with new market leadership, where strong re-rating triggers exist.</p>
+  </div>
+</dialog>
+
+<!-- Reverse Research -->
+<dialog class="modal" id="modal-reverse" aria-label="Reverse Research">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Reverse Research</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>Reverse Research is an unconventional process-driven approach, in which we use our proprietary indicators to define our coverage area for fundamental research. Our indicators are primed to recognise stocks and sectors with a secular change in intrinsic scrip strength, while suppressing 'market noise'.</p>
+    <p>Once our process picks out various scrips and sectors, we do a deep dive to identify reasons for their strength, carrying out detailed fundamental analysis. Reverse Research has borrowed, in varying degrees, from the investment philosophies of Ed Seykota, Gerald Loeb, Nicholas Darvas and the CANSLIM process of William O'Neil as the foundation of this methodology.</p>
+    <p>To know more about the Reverse Research process, you can read <a href="https://www.prodigyinvest.com/Prodigy-Reverse-Research-2.pdf" target="_blank" rel="noopener">The Reverse Research Process of Investment Management</a> by our MD &amp; CIO, Ravi Chadha.</p>
+  </div>
+</dialog>
+
+<!-- Strong Track Record -->
+<dialog class="modal" id="modal-track" aria-label="Strong Track Record">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Strong Track Record</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <div class="perf-wrap">
+      <div class="perf-cap">Prodigy Growth Strategy v/s NIFTY50 TRI</div>
+      <table class="perf">
+        <tr><th>Returns (%)*</th><th>Prodigy Growth Strategy</th><th>NIFTY50 TRI</th></tr>
+        <tr><td>1 Year</td><td>14.4%</td><td>-3.8%</td></tr>
+        <tr><td>3 Years</td><td>20.7%</td><td>9.5%</td></tr>
+        <tr><td>5 Years</td><td>17.5%</td><td>9.9%</td></tr>
+        <tr><td>Since Inception<span class="sub">(1<sup>st</sup> March, 2012)</span></td><td>22.5%</td><td>12.3%</td></tr>
+      </table>
+    </div>
+    <p class="note">*Figures are annualised, and are as of 31<sup>st</sup> May, 2026, and are not verified by SEBI. The portfolio returns are post fixed and performance fees. In line with SEBI guidelines, all the portfolio and benchmark returns are calculated using the Time-Weighted Rate of Return method.</p>
+    <p>In line with SEBI guidelines, all the portfolio and benchmark returns are calculated using Time Weighted Rate of Return (TWRR) method for our Discretionary PMS which commenced from 1<sup>st</sup> March 2012. Prior to this, we exclusively offered Advisory PMS since inception in October 2005.</p>
+    <h3>Testimonials</h3>
+    <blockquote class="t"><em>I am amongst Prodigy's first clients, and there has been no looking back ever since I started investing with them. The best thing about Prodigy is that they willingly accept and learn from their mistakes. This has helped them continuously evolve their processes and outperform the market hands down.</em><footer>Whole Time Director, Listed Synthetic Yarn Manufacturer, New Delhi, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>The team at Prodigy give us a quietly assured feeling about the management of our funds. The 15+ years of working with Prodigy have been stress free, thanks to their deft manoeuvring through all the ups and downs in the markets.</em><footer>Leading Creative Personality and Film Producer, Mumbai, Client Since 2006</footer></blockquote>
+  </div>
+</dialog>
+
+<!-- Longevity & Trust -->
+<dialog class="modal" id="modal-longevity" aria-label="Longevity and Trust">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Longevity &amp; Trust</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>Our client base has grown over the years largely through referrals from existing clients. We take pride in this and know that beyond outperformance, referrals come through trust, which has been built over 17+ years with a majority of our client base.</p>
+    <h3>Testimonials</h3>
+    <blockquote class="t"><em>I have been with Prodigy since inception, through the ups and downs of the market. I can confidently say that Prodigy consists of an exceptional set of fund managers, one in which we have continually invested more money with through the years and found great confidence, security and trust.</em><footer>Owner, Leading Jeweller, Mumbai, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>Our family have been clients since the very beginning of Prodigy. We have experienced wealth protection and financial growth with the finest analytical advice from Prodigy. As a result, we have never thought of any other providers of this support.</em><footer>Retired Founder, Pharmaceuticals Firm, Mumbai, Client Since 2005</footer></blockquote>
+  </div>
+</dialog>
+
+<!-- Payout -->
+<dialog class="modal" id="modal-payout" aria-label="Payout">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Payout</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>This idea of taking out profits came about after the Global Financial Crisis in 2008, and we believe it has held us and our clients in better stead ever since. Withdrawal of a portion of gains would also help clients meet their tax commitments in a timely manner. Since introducing the payout feature in 2012, we have (as on 31<sup>st</sup> March 2026) returned over 360% of the initial corpus.</p>
+    <p>We believe periodically distributing gains is in the spirit of our core belief, which is "Invest Well. Celebrate Life."</p>
+    <h3>Testimonials</h3>
+    <blockquote class="t"><em>I have been with Prodigy since their inception and find that they have outperformed all my other famous named portfolio managers. The team at Prodigy is transparent and easily approachable, guiding me with utmost sincerity. Unlike other PMS operators, Prodigy periodically returns part of the profits. Overall, my experience with them has been excellent.</em><footer>Owner, Fashion Garments Firm, Mumbai, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>I thank the team for handling my funds for the last decade, and they have done a good job. I very much appreciate the idea of distributing a small part of the surplus every quarter to be spent.</em><footer>Practicing CA, Mumbai</footer></blockquote>
+  </div>
+</dialog>
+
+<!-- Right Human Attribute -->
+<dialog class="modal" id="modal-human" aria-label="Right Human Attribute">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Right Human Attribute</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>We believe the right human attributes have seen us through the toughest of times. Discipline and belief in our investment philosophy have been key to our success and survival.</p>
+    <h3>Testimonials</h3>
+    <blockquote class="t"><em>Having been associated with Prodigy since inception, we can safely say this has been a wonderful experience when it comes to open channels of communication, creating value in wealth, always free and available with advice and information as needed and the utmost professionals when it comes to safeguarding your earnings through following best practices and adhering to strict policies. Prodigy has created a relationship with our family built around trust which is something they prioritise, always keeping our future in mind. Cannot recommend them highly enough as one's investment advisors and PMS.</em><footer>Owner, MSME, Building Products, Mumbai, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>I have been with Prodigy since 2006 and I am delighted with the returns. The deep knowledge at Prodigy's disposal has enabled them to multiply my wealth many times over the last 14 years. The team is one with high integrity and they believe in having transparency in all their dealings.</em><footer>Retired MD, Leading Indian Steel Producer, Mumbai, Client Since 2006</footer></blockquote>
+  </div>
+</dialog>
+
+<!-- Our Team -->
+<dialog class="modal" id="modal-team" aria-label="Our Team">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Our Team</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>Prodigy is led by Mr. Ravi Chadha (MD &amp; CIO) and Mr. Sharad Nayak (CEO &amp; Director - Research). Ravi is a rank holding Chartered Accountant who has over 25 years of experience in capital markets as an investment advisor in various reputed organisations. Mr. Sharad Nayak is an MBA, and has over two decades of experience in banking and capital markets.</p>
+  </div>
+</dialog>
+
+<!-- Customer Friendly Account Administration -->
+<dialog class="modal" id="modal-admin" aria-label="Customer Friendly Account Administration">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Customer Friendly Account Administration</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>Prodigy has appointed Axis Bank Ltd. (a SEBI registered Custodian) as a custodian of your securities (funds and stocks). Paperwork is limited to initial account opening formalities. Post the account opening, the client gets a 24x7 online access to the account. The online access offers a holistic position of the clients holdings across various asset classes. The entire administration process becomes almost paper free. Audited statements are provided at the end of the financial year.</p>
+  </div>
+</dialog>
+
+<!-- FAQ -->
+<dialog class="modal" id="modal-faq" aria-label="Frequently Asked Questions">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Frequently Asked Questions</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <details class="faq-item">
+      <summary>1. Who is eligible for investing in a PMS? <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul>
+        <li>Resident Individuals</li>
+        <li>Hindu Undivided Families (HUF)</li>
+        <li>Body Corporate (Private / Public)</li>
+        <li>Registered Trust</li>
+        <li>Non-Resident Indian (subject to RBI approval)</li>
+        <li>Partnership firms or any other eligible investor</li>
+      </ul></div>
+    </details>
+    <details class="faq-item">
+      <summary>2. Is there a minimum investment amount? <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul><li>The minimum amount mandated by SEBI is Rs. 50,00,000 (Rupees Fifty Lakhs) per account. Above the minimum level, you can make additions of any amount to the portfolio.</li></ul></div>
+    </details>
+    <details class="faq-item">
+      <summary>3. Can the client make partial withdrawals from the portfolio? <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul><li>Partial withdrawals are allowed as along as the withdrawal amount does not cause the value of the portfolio to decrease below the applicable minimum investment amount.</li></ul></div>
+    </details>
+    <details class="faq-item">
+      <summary>4. How can I monitor the performance of my portfolio? <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul>
+        <li>You can login to your portfolio using the portal at the top of this page to check your portfolio any time you want. The portfolio is updated on a T basis.</li>
+        <li>The portfolio statements are emailed to the clients on a monthly basis. Audited statements are provided on an annual basis by 30<sup>th</sup> June every year.</li>
+      </ul></div>
+    </details>
+    <details class="faq-item">
+      <summary>5. Can I specify investments that I want or don't want to hold? <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul><li>Portfolios are run on a discretionary basis. However, we do accept restrictions in stocks where a specific client has access to price sensitive information / or where the client is restricted from trades due to regulatory requirements. Special requests to exclude certain investments from the portfolio, may be accommodated in certain cases only.</li></ul></div>
+    </details>
+    <details class="faq-item">
+      <summary>6. Does Prodigy trade in Derivatives (Futures and Options) for the purpose of portfolio hedging. <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul><li>As of date, we have not done so and do not intend to do so. However, this may change in future.</li></ul></div>
+    </details>
+    <details class="faq-item">
+      <summary>7. What is the difference between a Discretionary PMS and a Non-Discretionary PMS? Does Prodigy run a Non-Discretionary PMS as well? <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul>
+        <li>In a discretionary PMS, the portfolio manager makes investment decisions on the client's behalf.</li>
+        <li>In a non-discretionary PMS, the portfolio manager suggests investment ideas to the client. The choice and timing for investment rests with the client while the execution of the investment decision is done by the portfolio manager. Prodigy offers Non-Discretionary PMS on a select basis only.</li>
+      </ul></div>
+    </details>
+    <details class="faq-item">
+      <summary>8. Can one transfer shares to open a PMS account? <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul><li>Yes, you can transfer shares to us as long as the value of the securities transferred exceeds the SEBI mandated minimum portfolio value. However, we prefer if clients sell the shares and transfer funds from the same to us.</li></ul></div>
+    </details>
+    <details class="faq-item">
+      <summary>9. Is there a lock in period and an exit load? <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul><li>There is no lock in period and we do not levy any exit load. However, we expect clients to stay invested with us for a minimum of 5 years in order for our strategy to see itself through the various market cycles, as returns from equity can be lumpy in nature.</li></ul></div>
+    </details>
+    <details class="faq-item">
+      <summary>10. How safe are my securities in the PMS? <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul><li>Shares and funds are held with a custodian (Axis Bank) and Prodigy only has a Power of Attorney to buy and sell shares on your behalf. The funds and shares move directly between the custodian and the stock exchange.</li></ul></div>
+    </details>
+    <details class="faq-item">
+      <summary>11. What is the next step in opening a PMS account? <span class="chev">&#9662;</span></summary>
+      <div class="faq-a"><ul>
+        <li>Just fill in your details in the <strong style="color:var(--navy)">Let's Connect</strong> section and we will get in touch with you at the earliest.</li>
+        <li>You can also get in touch with us by sending a mail to info@prodigyinvest.com</li>
+      </ul></div>
+    </details>
+  </div>
+</dialog>
+
+<!-- All Testimonials -->
+<dialog class="modal" id="modal-testimonials" aria-label="Testimonials">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Testimonials</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <blockquote class="t"><em>I have been with Prodigy since inception, through the ups and downs of the market. I can confidently say that Prodigy consists of an exceptional set of fund managers, one in which we have continually invested more money with through the years and found great confidence, security and trust.</em><footer>Owner, Leading Jeweller, Mumbai, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>Prodigy's hallmark has been an uncompromising focus on managing risk, in a disciplined, ethical and transparent manner. My experience with them has been very fruitful and I have added substantially to my portfolio with them since the initial funding.</em><footer>Retired Global Wealth Manager, USA, Client Since 2014</footer></blockquote>
+    <blockquote class="t"><em>I am amongst Prodigy's first clients, and there has been no looking back ever since I started investing with them. The best thing about Prodigy is that they willingly accept and learn from their mistakes. This has helped them continuously evolve their processes and outperform the market hands down.</em><footer>Whole Time Director, Listed Synthetic Yarn Manufacturer, New Delhi, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>Prodigy has been largely responsible for my financial prosperity, helping me to concentrate on enjoying my early retirement, free of financial stress. The professionalism, enthusiasm and spontaneity of Prodigy must be lauded. I feel they have delivered the highest level of integrity and promptness in customer service.</em><footer>Retired Co-Founder, Leading Accounting Firm, Mumbai, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>I have been in the market for over 25 years, and have seen my fair share of ups and downs. In good times, most fund managers give positive returns, but it is in turbulent markets that one can see the difference. In the many market downturns over the years, I have seen Prodigy not only limit losses but also outperform my other PMS investments, which were from bigger and better known funds. I would wholeheartedly recommend Prodigy for those who believe in long term capital accumulation.</em><footer>MD, Offshore Oil and Gas Services Firm, Mumbai, Client Since 2014</footer></blockquote>
+    <blockquote class="t"><em>Having been with Prodigy for the last 10 years, I have seen that they have always believed in and stuck to their investment philosophy. This, I believe, is the real hallmark of a good fund manager.</em><footer>Owner, Oil and Gas Services Ancillary, Mumbai, Client Since 2010</footer></blockquote>
+    <blockquote class="t"><em>In my 10 years with Prodigy, their approach of Reverse Research has borne very good returns for me. The alacrity and flexibility with which Prodigy acted with during the market crisis in March 2020 due to Covid-19 speaks volumes about them - their risk management processes have held my portfolio in good stead.</em><footer>Real Estate Developer, New Delhi, Client Since 2010</footer></blockquote>
+    <blockquote class="t"><em>I have been with Prodigy since their inception and find that they have outperformed all my other famous named portfolio managers. The team at Prodigy is transparent and easily approachable, guiding me with utmost sincerity. Unlike other PMS operators, Prodigy periodically returns part of the profits. Overall, my experience with them has been excellent.</em><footer>Owner, Fashion Garments Firm, Mumbai, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>I have been with Prodigy ever since their journey began in 2005. Over the years, the team has showcased their exemplary reliability and dependability through the various ups and downs of the market. I am delighted with the returns to date.</em><footer>Founder, Leading Logistics Firm, Mumbai, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>Our family have been clients since the very beginning of Prodigy. We have experienced wealth protection and financial growth with the finest analytical advice from Prodigy. As a result, we have never thought of any other providers of this support.</em><footer>Retired Founder, Pharmaceuticals Firm, Mumbai, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>The team at Prodigy give us a quietly assured feeling about the management of our funds. The 14+ years of working with Prodigy have been stress free, thanks to their deft manoeuvring through all the ups and downs in the markets.</em><footer>Leading Creative Personality and Film Producer, Mumbai, Client Since 2006</footer></blockquote>
+    <blockquote class="t"><em>I have been with Prodigy since 2006 and I am delighted with the returns. The deep knowledge at Prodigy's disposal has enabled them to multiply my wealth many times, over the last 14 years. The team is one with high integrity and they believe in transparency in all their dealings.</em><footer>Retired MD, Leading Indian Steel Producer, Mumbai, Client Since 2006</footer></blockquote>
+    <blockquote class="t"><em>Over the past 15 years Prodigy have ensured a service that is precise, prompt, and adaptive to our business needs. They are very accommodating and responsive, especially when our requirements deviate from the normal. Words that come to mind when I think of Prodigy and their enduring relationship with us are: Astute, Decisive &amp; Agile. Over this period they adapted their investment strategy according to the changing times; and they truly do have the client at the heart of their service offering.</em><footer>Director, Real Estate and Commodities Finance Firm, Mumbai, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>Prodigy has led our investments with visibility, flexibility and utmost diligence. Having been invested with Prodigy right from the start, I have been able to celebrate life!</em><footer>Real Estate Developer, Hyderabad, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>Having been associated with Prodigy since inception, we can safely say that this has been a wonderful experience when it comes to open channels of communication and creating value in wealth. Team Prodigy has always be approachable with information and advice whenever needed. By following rigorous discipline to strict policies and practices, the Team have been utmost professionals in safeguarding earnings. Prodigy has created a relationship with our family built around trust while always keeping our future in mind. I cannot recommend them highly enough as one's investment advisors and PMS.</em><footer>Owner, MSME, Building Products, Mumbai, Client Since 2005</footer></blockquote>
+    <blockquote class="t"><em>I thank the team for handling my funds for the last decade, and they have done a good job. I very much appreciate the idea of distributing a small part of the surplus every quarter to be spent.</em><footer>Practicing CA, Mumbai</footer></blockquote>
+  </div>
+</dialog>
+
+<!-- Why Prodigy May Not Be Right For You -->
+<dialog class="modal" id="modal-whynot" aria-label="Why Prodigy May Not Be Right For You">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Why Prodigy May Not Be Right For You</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>Our investment style and process are significantly different from our peers and may not be suited to investors who are looking for a buy and hold strategy.</p>
+    <p>Our portfolio turnover is on the higher side given our extreme focus on risk management. While most other large fund houses have low turnover, ~0.2x, ours has been as high as ~2.25x.</p>
+    <p>There will be times when our processes may not work and during this period of time we may underperform. While we do not levy any entry / exit loads and we do not have any lock-in, we expect clients to be invested with us for a minimum of 5 years for the strategy to perform to its potential and ride out any patches as mentioned above.</p>
+  </div>
+</dialog>
+
+<!-- Disclaimer -->
+<dialog class="modal" id="modal-disclaimer" aria-label="Disclaimer">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Disclaimer</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <p>Information (including documents) on this website is not for public distribution. Any, transmission, retransmission, circulation or other communication and any use thereof is strictly prohibited. Persons into whose possession information or documents from this website may come are required to observe these restrictions.</p>
+    <p>All information and documents are subject to changes without prior notice and may be, or may contain material that is, confidential, privileged and/or proprietary. Some of the information or documents or material therein may be subject to copyright or other intellectual property right of MIV Investment Services Private Limited ("MIV") or any other person.</p>
+    <p>MIV is not soliciting or recommending any act or omission based on this material.</p>
+    <p>No representation or warranty is made or held out by MIV or any other person in connection with the correctness, completeness, authenticity or any other aspect of any information, documents or material on this website.</p>
+    <p>Notwithstanding the above, should any person choose to rely on or use any of the information, documents or material, the user shall assume the entire risk of doing so. Neither MIV, nor any person connected with it, accepts, or will have, any liability arising from the use of any information, documents or material from this website.</p>
+    <p>Past performance is not a guide for future performance.</p>
+    <p>Investment in general, and investment in equities in particular, involves substantial risk including potential permanent loss of capital (in whole or in part) and hence may not be suitable for all investors.</p>
+    <p>All persons directly or indirectly accessing this website and any information, document or material on it shall be deemed to have notice of, and to have agreed and accepted, the above.</p>
+  </div>
+</dialog>
+
+<!-- Lodge Complaint -->
+<dialog class="modal" id="modal-complaint" aria-label="Lodge Complaint">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Lodge Complaint</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <form action="https://www.prodigyinvest.com/sendnew.php" method="post" name="myForm" id="contactForm" class="form-grid">
+      <div class="field"><label for="c-name">Name</label><input type="text" name="name" required id="c-name" placeholder="Your Name" autocomplete="name"></div>
+      <div class="field"><label for="c-phone">Phone Number</label><input type="text" name="mobile_number" id="c-phone" required placeholder="Your Phone Number" autocomplete="tel"></div>
+      <div class="field full"><label for="c-email">Email</label><input type="email" name="email" required id="c-email" placeholder="Your Email" autocomplete="email"></div>
+      <div class="field full"><label for="c-message">Message</label><textarea name="message" required id="c-message" placeholder="Your Message" autocomplete="off"></textarea></div>
+      <div class="field full"><div id="html_element" style="margin-bottom:6px"></div></div>
+      <div class="field full" style="text-align:right"><button type="submit" class="btn-submit">SEND</button></div>
+    </form>
+    <div class="complaint-links">
+      <a href="https://www.prodigyinvest.com/Prodigy-discloser_May-2026.pdf" target="_blank" rel="noopener">Complaint Data</a>
+      <a href="https://scores.sebi.gov.in/scores-home" target="_blank" rel="noopener">Lodge Complaint with SEBI</a>
+      <a href="https://www.prodigyinvest.com/Circular-on-Online-Resolution-of-Disputes-in-the-Indian-Securities-Market.pdf" target="_blank" rel="noopener">Online Resolution of Disputes Circular</a>
+      <a href="https://smartodr.in/login" target="_blank" rel="noopener">ODR Portal</a>
+    </div>
+  </div>
+</dialog>
+
+<!-- Careers -->
+<dialog class="modal" id="modal-jobs" aria-label="What to expect at Prodigy">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>What to expect at Prodigy</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <ul class="expect-list">
+      <li><span class="tick">&#10003;</span><span>Opportunities to grow personally and professionally</span></li>
+      <li><span class="tick">&#10003;</span><span>Pay above industry standards</span></li>
+      <li><span class="tick">&#10003;</span><span>Good work-life balance</span></li>
+      <li><span class="tick">&#10003;</span><span>Freedom and flexibility to grow within the role</span></li>
+    </ul>
+    <h3>Positions Open</h3>
+
+    <details class="job-acc">
+      <summary>Equity Research Analyst <span class="chev">&#9662;</span></summary>
+      <div class="job-body">
+        <p><strong>About the Job</strong></p>
+        <p>At Prodigy, we are always striving towards value creation in the form of finding opportunities that will define the leaders of tomorrow. In this role, the analyst's job will not only pertain to the quantitative aspect of finance but also with the qualitative skills of finding ideas from information that is not always visible in plain sight, this not only requires skills ranging from financial concepts and excel tools but most importantly the ability to grasp knowledge from articles, books, interviews and any other source that can help the analyst generate ideas by using this base of knowledge, hence we are looking for candidates who are more of investors in their own personal capacity rather than just being analysts while a blend of both will be the perfect scenario for both the parties.</p>
+        <p><strong>Key requirements for this position:</strong></p>
+        <ul>
+          <li>Financial and analytical skills in the form of reading and decoding financial statements. How to apply the basic financial concepts in different situations will be tested.</li>
+          <li>Should be an avid reader and be willing to be part of the knowledge-sharing ecosystem of the research team. Candidates who read books and articles of various genres as their hobbies will be looked at favourably.</li>
+          <li>The candidate should be an investor in his or her own personal capacity. This does not pertain to derivatives or short-term trading but only long-term investing irrespective of the strategy used.</li>
+          <li>There is no compulsion of a "Finance degree" to apply for this job and we will welcome applicants from various fields as long as the basic financial concepts and their own investing style is well defined.</li>
+          <li>Candidates working towards CFA/CA/FRM/MBA will be looked at favourably but it is not a core requirement for this job.</li>
+          <li>Candidates applying for this position need to send in their own work, which could be a book review, a company analysis or just their thoughts on a topic of their choice. <strong>Please note that your application will not be considered if any of these choices are not included.</strong></li>
+        </ul>
+        <p><strong>Key Responsibilities of the analyst</strong></p>
+        <ul>
+          <li>Analyse companies under coverage and scout for opportunities across various sectors in accordance with the fund's investment strategy.</li>
+          <li>Attend con-calls and prepare reports of companies under coverage.</li>
+          <li>Use the available information to formulate a view on companies under coverage and be on top of all the current events prevailing in the industry.</li>
+          <li>Participating in company analysis to help the team form a view on the merits or demerits of a potential investment.</li>
+        </ul>
+        <form action="https://www.prodigyinvest.com/send-test.php" method="post" enctype="multipart/form-data" class="form-grid">
+          <div class="field"><label for="j1-name">Name</label><input type="text" name="name" id="j1-name" required placeholder="Your Name" autocomplete="name"></div>
+          <div class="field"><label for="j1-phone">Phone</label><input type="text" name="mobile_number" id="j1-phone" required placeholder="Your Phone" autocomplete="tel"></div>
+          <div class="field full"><label for="j1-email">Email</label><input type="email" name="email" id="j1-email" required placeholder="Your Email" autocomplete="email"></div>
+          <div class="field"><label for="j1-cv">Attach CV</label><input type="file" id="j1-cv" name="file" required></div>
+          <div class="field"><label for="j1-cover">Cover Letter</label><input type="file" id="j1-cover" name="cover" required></div>
+          <div class="field full" style="text-align:right"><button type="submit" class="btn-submit">APPLY NOW</button></div>
+        </form>
+      </div>
+    </details>
+
+    <details class="job-acc">
+      <summary>Back Office Executive <span class="chev">&#9662;</span></summary>
+      <div class="job-body">
+        <p><strong>Key Responsibilities</strong></p>
+        <ul>
+          <li>Client onboarding and co-ordination with clients for KYC (know your client) requirements and updation of the same.</li>
+          <li>Handling PMS back-office operations &amp; Client Queries</li>
+          <li>Preparation of MIS &amp; reports to Fund Managers</li>
+          <li>Candidate should be smart with good communication skills</li>
+          <li>Must have a good working knowledge of Microsoft Excel (minimum 2 years experience)</li>
+          <li>Experienced in bank, demat and client account openings</li>
+          <li>Qualification : Graduate or higher</li>
+        </ul>
+        <p><strong>Experience :</strong> Minimum 2 years in back office with a broker / portfolio manager</p>
+        <form action="https://www.prodigyinvest.com/send-test.php" method="post" enctype="multipart/form-data" class="form-grid">
+          <div class="field"><label for="j2-name">Name</label><input type="text" name="name" id="j2-name" required placeholder="Your Name" autocomplete="name"></div>
+          <div class="field"><label for="j2-phone">Phone</label><input type="text" name="mobile_number" id="j2-phone" required placeholder="Your Phone" autocomplete="tel"></div>
+          <div class="field full"><label for="j2-email">Email</label><input type="email" name="email" id="j2-email" required placeholder="Your Email" autocomplete="email"></div>
+          <div class="field"><label for="j2-cv">Attach CV</label><input type="file" id="j2-cv" name="file" required></div>
+          <div class="field"><label for="j2-cover">Cover Letter</label><input type="file" id="j2-cover" name="cover" required></div>
+          <div class="field full" style="text-align:right"><button type="submit" class="btn-submit">APPLY NOW</button></div>
+        </form>
+      </div>
+    </details>
+
+    <details class="job-acc">
+      <summary>Equity Research Analyst - Intern <span class="chev">&#9662;</span></summary>
+      <div class="job-body">
+        <p><strong>Key requirements for this position:</strong></p>
+        <ul>
+          <li>Gathering information relating to companies within the portfolio.</li>
+          <li>Should be an avid reader and be willing to be part of the knowledge-sharing ecosystem of the research team.</li>
+          <li>Candidates who read new articles, reports and books of various genres as their hobbies will be looked at favourably.</li>
+          <li>The candidate should be an investor in his or her own personal capacity.</li>
+          <li>Willingness to adapt to the company's investing process and method.</li>
+          <li>There is no compulsion of a "Finance degree" to apply for this job and we will welcome applicants from various fields as long as the basic financial concepts and their own investing style is well defined.</li>
+          <li>Candidates working towards CFA/CA/FRM/MBA will be looked at favourably but it is not a core requirement for this internship.</li>
+        </ul>
+        <p><strong>About the Internship:</strong></p>
+        <ul>
+          <li>Experience requirement - 0-1 year of work experience.</li>
+          <li>Duration can vary between - 3 to 6 months</li>
+          <li>Salary will be determined by the company</li>
+        </ul>
+        <form action="https://www.prodigyinvest.com/send-test.php" method="post" enctype="multipart/form-data" class="form-grid">
+          <div class="field"><label for="j3-name">Name</label><input type="text" name="name" id="j3-name" required placeholder="Your Name" autocomplete="name"></div>
+          <div class="field"><label for="j3-phone">Phone</label><input type="text" name="mobile_number" id="j3-phone" required placeholder="Your Phone" autocomplete="tel"></div>
+          <div class="field full"><label for="j3-email">Email</label><input type="email" name="email" id="j3-email" required placeholder="Your Email" autocomplete="email"></div>
+          <div class="field"><label for="j3-cv">Attach CV</label><input type="file" id="j3-cv" name="file" required></div>
+          <div class="field"><label for="j3-cover">Cover Letter</label><input type="file" id="j3-cover" name="cover" required></div>
+          <div class="field full" style="text-align:right"><button type="submit" class="btn-submit">APPLY NOW</button></div>
+        </form>
+      </div>
+    </details>
+  </div>
+</dialog>
+
+<!-- Monthly Newsletters -->
+<dialog class="modal" id="modal-newsletters" aria-label="Monthly Newsletters">
+  <div class="modal-head"><img src="img/load.png" alt=""><h2>Monthly Newsletters</h2><button type="button" class="modal-close" aria-label="Close">&#10005;</button></div>
+  <div class="modal-body">
+    <div class="nl-grid">
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/June ML 2026-2.pdf" target="_blank" rel="noopener">June 2026 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/May ML 2026-2.pdf" target="_blank" rel="noopener">May 2026 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/April ML 2026-3.pdf" target="_blank" rel="noopener">April 2026 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/March ML 2026.pdf" target="_blank" rel="noopener">March 2026 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/February ML 2026.pdf" target="_blank" rel="noopener">February 2026 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/January 2026 ML.pdf" target="_blank" rel="noopener">January 2026 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/December ML 2025.pdf" target="_blank" rel="noopener">December 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/November ML 2025.pdf" target="_blank" rel="noopener">November 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/October_ML_2025.pdf" target="_blank" rel="noopener">October 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/September ML 2025.pdf" target="_blank" rel="noopener">September 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/August ML 2025.pdf" target="_blank" rel="noopener">August 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/July ML 2025.pdf" target="_blank" rel="noopener">July 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/June_2025 ML.pdf" target="_blank" rel="noopener">June 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/May 2025 ML_v3.pdf" target="_blank" rel="noopener">May 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/April ML 2025.pdf" target="_blank" rel="noopener">April 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/March ML 2025-2.pdf" target="_blank" rel="noopener">March 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/Feb_ML_2025.pdf" target="_blank" rel="noopener">February 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/PDF_January ML 2025_v6 2.pdf" target="_blank" rel="noopener">January 2025 <span class="pdf">PDF</span></a>
+      <a href="https://www.prodigyinvest.com/admin/images/Newsletter/December ML 2024.pdf" target="_blank" rel="noopener">December 2024 <span class="pdf">PDF</span></a>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* ---------- Header shadow ---------- */
+const header = document.getElementById('header');
+addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8), {passive:true});
+
+/* ---------- Modals ---------- */
+document.querySelectorAll('[data-modal]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const dlg = document.getElementById(btn.dataset.modal);
+    if (dlg) { dlg.showModal(); dlg.scrollTop = 0; }
+  });
+});
+document.querySelectorAll('dialog.modal').forEach(dlg => {
+  dlg.querySelector('.modal-close').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => {            // click on backdrop closes
+    const r = dlg.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close();
+  });
+});
+
+/* ---------- Hero slider ---------- */
+const slides = [...document.querySelectorAll('.hero-slide')];
+const dotsWrap = document.getElementById('heroDots');
+let cur = 0, heroTimer;
+slides.forEach((_, i) => {
+  const d = document.createElement('button');
+  d.setAttribute('aria-label', `Go to slide ${i+1} of ${slides.length}`);
+  if (i === 0) d.classList.add('active');
+  d.addEventListener('click', () => { go(i); restart(); });
+  dotsWrap.appendChild(d);
+});
+const dots = [...dotsWrap.children];
+function go(i){
+  cur = (i + slides.length) % slides.length;
+  slides.forEach((s, j) => s.classList.toggle('active', j === cur));
+  dots.forEach((d, j) => d.classList.toggle('active', j === cur));
+}
+function restart(){ clearInterval(heroTimer); heroTimer = setInterval(() => go(cur+1), 7000); }
+document.getElementById('heroPrev').addEventListener('click', () => { go(cur-1); restart(); });
+document.getElementById('heroNext').addEventListener('click', () => { go(cur+1); restart(); });
+restart();
+
+/* ---------- Testimonial slider ---------- */
+const tItems = [...document.querySelectorAll('.testi-item')];
+const tDotsWrap = document.getElementById('testiDots');
+let tCur = 0, tTimer;
+tItems.forEach((_, i) => {
+  const d = document.createElement('button');
+  d.setAttribute('aria-label', `Go to testimonial ${i+1} of ${tItems.length}`);
+  if (i === 0) d.classList.add('active');
+  d.addEventListener('click', () => { tGo(i); tRestart(); });
+  tDotsWrap.appendChild(d);
+});
+const tDots = [...tDotsWrap.children];
+function tGo(i){
+  tCur = (i + tItems.length) % tItems.length;
+  tItems.forEach((s, j) => s.classList.toggle('active', j === tCur));
+  tDots.forEach((d, j) => d.classList.toggle('active', j === tCur));
+}
+function tRestart(){ clearInterval(tTimer); tTimer = setInterval(() => tGo(tCur+1), 6000); }
+tRestart();
+
+/* ---------- Train moves with scroll (homage to the original) ---------- */
+const train = document.getElementById('train');
+addEventListener('scroll', () => {
+  const p = scrollY / Math.max(1, document.body.scrollHeight - innerHeight);
+  train.style.transform = `translateX(${p * 130 - 15}vw)`;
+}, {passive:true});
+
+/* ---------- Reveal on scroll ---------- */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ---------- reCAPTCHA (lazy, same sitekey as original) ---------- */
+var onloadCallback = function(){
+  if (window.grecaptcha && document.getElementById('html_element')) {
+    grecaptcha.render('html_element', { sitekey: '6LfF-EcqAAAAALijvwRRB7RWYv8Gx9usdj-Hs4jq' });
+  }
+};
+setTimeout(function(){
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit';
+  document.head.appendChild(s);
+}, 2500);
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  if (window.grecaptcha && grecaptcha.getResponse().length === 0) {
+    e.preventDefault();
+    alert('Please complete the reCAPTCHA.');
+  }
+});
+</script>
+</body>
+</html>
